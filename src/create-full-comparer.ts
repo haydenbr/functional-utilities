@@ -1,6 +1,6 @@
 import { compareOperator } from './types'
 
-export function createComparer<T>(
+export function createFullComparer<T>(
 	...operators: compareOperator<T>[]
 ) {
 	return function comparerFunction(t1: T, t2: T) {
