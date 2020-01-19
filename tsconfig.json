@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
         "lib": [
-            "es2019"
+            "es2019",
+            "dom"
         ],
         "module": "commonjs",
         "esModuleInterop": true,
@@ -15,11 +16,11 @@
         "paths": {
             "*": [
                 "node_modules/*",
-                "src/types/*"
+                "src/functional-comparer/types/*"
             ]
         }
     },
     "include": [
-        "src/**/*"
+        "src/**/*",
     ]
 }

@@ -35,6 +35,7 @@
 
 import {  } from './operators'
 import { compareOperator } from './types'
+import { createCompareOperator } from './operators/create-compare-operator'
 
 export function createComparer<T>(
 	...compareFunctions: compareOperator<T>[]
@@ -78,7 +79,7 @@ function custom<T, K extends keyof T>(
 	return (t1, t2) => customCompare(t1[propName], t2[propName])
 }
 
-const compareDates = createCompareFunctionCreator<Date>((d1, d2) => d1 === d2)
+const compareDates = createCompareOperator<Date>((d1, d2) => d1 === d2)
 
 // this still doesn't understand that 'createdOn' is the property createdOn in interface,
 // but it's close enough. So if I rename createdOn on the interface, the call to compareDates
